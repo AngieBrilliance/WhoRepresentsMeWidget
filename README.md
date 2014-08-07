@@ -15,3 +15,7 @@ The widget's backend will use django to pull from Sunlight's Open Congress and O
 
 The Sunlight Foundation is a nonpartisan nonprofit that advocates for open government globally and uses technology to make government more accountable to all. 
 
+##About The Widget##
+====================
+
+The widget is an embeddable iFrame (built with Django) that would pull from the Sunlight Foundation's api's [Congress](https://sunlightlabs.github.io/congress/) and [Open States](http://sunlightlabs.github.io/openstates-api/)
