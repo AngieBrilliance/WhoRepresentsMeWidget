@@ -24,6 +24,14 @@
 				Latitude: {{lat}}
 				Longitude: {{lng}}
 
+				{% for legislator in legislators %}
+				<br><br>
+				<div class="legislator">
+					{{legislator}}
+				</div>
+				
+				{% endfor %}
+
 			</div>
 
 		</body>
