@@ -1,0 +1,3 @@
+venv
+*.pyc
+WhoRepresentsMe/settings_hidden.py
