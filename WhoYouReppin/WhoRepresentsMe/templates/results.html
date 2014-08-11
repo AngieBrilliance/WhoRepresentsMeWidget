@@ -10,7 +10,7 @@
 
 		<body>
 
-			<h1> Who Represents Me Widget </h1>
+			<h1>We Found Your Representatives</h1>
 
 			<form action="" method = "post">
 				{% csrf_token %}
@@ -20,25 +20,56 @@
 			</form>
 
 			<div class="result_holder">
-				<h2> State legislators </h2>
+				
+
+			<div class="state_senate_holder">
+				<h2> State Senators </h2>
 				{% for legislator in state_legislators %}
 				<br><br>
-				{{legislator.full_name}}
+					{% if legislator.chamber == 'upper' %}
+						<img src={{legislator.photo_url}}>
+						<p>{{legislator.full_name}}</p>
+						<p>Phone: {{legislator.office_phone}}</p>
+						<p>Website: <a href={{legislator.url}}>Click here</a></p>
+					{% endif %}
 				<br>
-				<div class="legislator">
-					{{legislator}}
-				</div>
 				{% endfor %}
+			</div>
 
-				<h2> Congress </h2>
+
+
+			<div class="state_house_holder">
+				<h2> State Representatives </h2>
+				{% for legislator in state_legislators %}
+				<br><br>
+					{% if legislator.chamber == 'lower' %}
+						<img src={{legislator.photo_url}}>
+						<p>{{legislator.full_name}}</p>
+						<p>Phone: {% for office in legislator.offices %} {{office.phone}} {% endfor %}</p>
+						<p>Email: {{legislator.email}}</p>
+						<p>Website: <a href={{legislator.url}}>Click here</a></p>
+					{% endif %}	
+				<br>
+				{% endfor %}
+			</div>
+
+
+
+			<div class="congress_holder">
+				<h2> Congressional Representatives </h2>
 				{% for legislator in congressional_legislators %}
 				<br><br>
-				{{legislator.last_name}}
+						<img src={{legislator.photo_url}}>
+						<p>{{legislator.first_name}} {{legislator.last_name}}</p>
+						<p>Phone: {{legislator.phone}}</p>
+						<p>Email: {{legislator.oc_email}}</p>
+						<p>Website: <a href={{legislator.website}}>Click here</a></p>
+						<p>Facebook: {{legislator.facebook_id}}</p>
+
 				<br>
-				<div class="legislator">
-					{{legislator}}
-				</div>	
 				{% endfor %}
+			</div>
+
 
 			</div>
 

@@ -10,15 +10,14 @@
 
 		<body>
 
-			<h1> Who Represents Me Widget </h1>
+			<h1>Find Your Representatives</h1>
 
 			<form action="" method = "post">
 				{% csrf_token %}
-				{{form.as_table}}
+				{{form.address}}
 
-				<input type="submit" value="Find my representatives">
+				<div><input type="submit" value="Who Represents Me?"></div>
 			</form>
-
 		</body>
 
 </html>
