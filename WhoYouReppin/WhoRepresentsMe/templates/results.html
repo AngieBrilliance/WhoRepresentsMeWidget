@@ -23,6 +23,8 @@
 				<h2> State legislators </h2>
 				{% for legislator in state_legislators %}
 				<br><br>
+				{{legislator.full_name}}
+				<br>
 				<div class="legislator">
 					{{legislator}}
 				</div>
@@ -31,6 +33,8 @@
 				<h2> Congress </h2>
 				{% for legislator in congressional_legislators %}
 				<br><br>
+				{{legislator.last_name}}
+				<br>
 				<div class="legislator">
 					{{legislator}}
 				</div>	
