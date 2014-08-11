@@ -24,3 +24,13 @@ The Sunlight Foundation is a nonpartisan nonprofit that advocates for open gover
   - The second user's results would show in an easy to read, user friendly, card/list format. 
   - The user's representative results would be clickable. When a representative is clicked an option to email, tweet, or call, would show, as well as an option to redirect to the representative's sunlight homepage. 
 
+
+##Security##
+====================
+Sunlight and Google Geocode API keys are imported from a file called settings_hidden.py that is ignored by Gitignore.
+The file should be stored alongside views.py inside WhoYouReppin/WhoRepresentsMe, and should have two lines of code:
+
+```
+GOOGLE_GEOCODE_API_KEY='your google geocode api key in quotes'
+SUNLIGHT_API_KEY='your sunlight api key in quotes'
+```

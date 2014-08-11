@@ -20,16 +20,20 @@
 			</form>
 
 			<div class="result_holder">
-				
-				Latitude: {{lat}}
-				Longitude: {{lng}}
-
-				{% for legislator in legislators %}
+				<h2> State legislators </h2>
+				{% for legislator in state_legislators %}
 				<br><br>
 				<div class="legislator">
 					{{legislator}}
 				</div>
-				
+				{% endfor %}
+
+				<h2> Congress </h2>
+				{% for legislator in congressional_legislators %}
+				<br><br>
+				<div class="legislator">
+					{{legislator}}
+				</div>	
 				{% endfor %}
 
 			</div>
